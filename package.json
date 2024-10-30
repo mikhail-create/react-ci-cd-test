@@ -1,5 +1,6 @@
 {
   "name": "todo-react-app",
+  "homepage": "https://mikhail-create.github.io/react-ci-cd-test/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
