@@ -20,19 +20,19 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd react-ci-cd-test
+          cd todo
           npm install
 
       - name: Build Project
         run: |
-          cd react-ci-cd-test
+          cd todo
           npm run build
 
       - name: Upload artifact to enable deployment
         uses: actions/upload-artifact@v3
         with:
           name: poduction file
-          path: ./react-ci-cd-test/build
+          path: ./todo/build
 
   # Deploy Job
   deploy:
@@ -44,10 +44,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: poduction file
-          path: ./react-ci-cd-test/build
+          path: ./todo/build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.KEY }} #this is the key of the access token
-          publish_dir: ./react-ci-cd-test/build
+          publish_dir: ./todo/build
